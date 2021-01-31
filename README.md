@@ -19,4 +19,4 @@ yarn start
 ```
 
 _by Ahmed Salih_
-<a href="https://twitter.com/salihcodev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @salihcodev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://twitter.com/salihcodev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @salihcodev</a>
