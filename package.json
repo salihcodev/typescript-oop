@@ -1,0 +1,21 @@
+{
+  "name": "learn-classes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "@salihcodev",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "parcel ./index.html",
+    "build": "parcel build ./index.html"
+  },
+  "dependencies": {
+    "@types/faker": "^5.1.6",
+    "@types/googlemaps": "^3.43.2",
+    "faker": "^5.2.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
