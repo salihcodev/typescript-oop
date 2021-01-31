@@ -1,9 +1,11 @@
 // MarkToAdd interface:
-interface MarkToAdd {
+export interface MarkToAdd {
   location: {
     lat: number;
     lng: number;
   };
+
+  markerInfo: () => string;
 }
 
 export class GoogleMap {
@@ -18,12 +20,26 @@ export class GoogleMap {
 
   // markerToAdd returns back the same value of both two params [User, Company] every time we call addMarker method
   addMarker(markerToAdd: MarkToAdd): void {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: markerToAdd.location.lat,
         lng: markerToAdd.location.lng,
       },
+    });
+
+    // Add listener on every marker.
+    marker.addListener('click', () => {
+      // Create infoWindow content.
+      const popupWindowContent = markerToAdd.markerInfo();
+
+      // Instantiate new infoWindow, Add the content.
+      const infoWindow = new google.maps.InfoWindow({
+        content: popupWindowContent,
+      });
+
+      // Finally open popup window. on a certain map, marker
+      infoWindow.open(this.googleMap, marker);
     });
   }
 }
