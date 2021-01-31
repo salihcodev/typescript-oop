@@ -1,6 +1,10 @@
-import { User } from '../user/User';
-import { Company } from '../company/Company';
-// you can use User & Company as class and
+// MarkToAdd interface:
+interface MarkToAdd {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
 
 export class GoogleMap {
   public googleMap: google.maps.Map;
@@ -13,7 +17,7 @@ export class GoogleMap {
   }
 
   // markerToAdd returns back the same value of both two params [User, Company] every time we call addMarker method
-  addMarker(markerToAdd: User | Company): void {
+  addMarker(markerToAdd: MarkToAdd): void {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
